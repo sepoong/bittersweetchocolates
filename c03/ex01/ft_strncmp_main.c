@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strncmp.c                                       :+:      :+:    :+:   */
+/*   ft_strncmp_main.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: seplee <seplee@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/03 04:44:55 by seplee            #+#    #+#             */
-/*   Updated: 2020/12/03 05:38:48 by seplee           ###   ########.fr       */
+/*   Updated: 2020/12/05 15:25:23 by seplee           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,14 +18,11 @@ int	ft_strncmp(char *s1, char *s2, unsigned int n)
 	unsigned int i;
 
 	i = 0;
-
-	while (s1 != '\0' && s2 != '\0' && i < n) 
+	while (s1[i] && s2[i] && (s1[i] == s2[i]) && i + 1 < n) 
 	{
-		if (s1[i] != s2[i])
-			return (s1[i] - s2[i]);
 		i++;
 	}
-	return (0);
+	return (s1[i] - s2[i]);
 }
 
 int main()
@@ -37,5 +34,3 @@ int main()
 	printf("%d \n", strncmp(strr1, strr2, 3));
 	printf("%d ", ft_strncmp(strr1, strr2, 3));
 }
-
-

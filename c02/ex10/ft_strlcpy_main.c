@@ -6,7 +6,7 @@
 /*   By: seplee <seplee@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/02 18:48:56 by seplee            #+#    #+#             */
-/*   Updated: 2020/12/03 01:03:01 by seplee           ###   ########.fr       */
+/*   Updated: 2020/12/05 14:47:24 by seplee           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,14 +20,12 @@ unsigned int ft_strlcpy(char *dest, char *src, unsigned size)
 	
 	number = 0;
 	i = 0; 
-	while ( i < size - 1 && src[i] != '\n')
+	while ( i < size - 1 && src[i] != '\0')
 	{
 		dest[i] = src[i];
 		i++;
 	}
-//	if (i < size) 
-//		return 0;
-	dest[i] = '\n';
+	dest[i] = '\0';
 	while (src[number])
 	{
 		number++;
@@ -46,6 +44,6 @@ int main()
 	printf("%s \n", cop);
 
 	ft_strlcpy(cop2, str, 10);
-	printf("%s\n", cop2);	
+	printf("%s \n", cop2);	
 	printf("%d", ft_strlcpy(cop2, str, 10));
 }

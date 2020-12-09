@@ -1,34 +1,44 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   first_world.c                                      :+:      :+:    :+:   */
+/*   rev_print.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: seplee <seplee@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/12/09 02:51:31 by seplee            #+#    #+#             */
-/*   Updated: 2020/12/10 00:27:48 by seplee           ###   ########.fr       */
+/*   Created: 2020/12/10 00:50:42 by seplee            #+#    #+#             */
+/*   Updated: 2020/12/10 02:00:58 by seplee           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
+#include <string.h>
+
+int ft_strlen(char *str)
+{
+	int n;
+
+	n = 0;
+	while (str[n]) //it fails with *str 
+		n++;
+	return (n - 1); //'strlen' counts before'\0'
+}
+
 
 int main(int ac, char **av)
 {
-	int i;
-
-	i = 0;
+	int n;
+	
+	n = ft_strlen(av[1]);
 	if (ac == 2)
 	{
-		while (av[1][i] == ' ' || av[1][i] == '\t' || av[1][i] == '\n')
-				i++;
-		while (!(av[1][i] == 9 || av[1][i] == 32 || av[1][i] == '\n'))
+		while (n >= 0)
 		{
-		write(1, &av[1][i], 1);
-		i++;
-		}
-	//	while (av[1][i] == ' ' || av[1][i] == '\t' || av[1][i] == '\n')
-	//			i++;
-	} // Order matters in this matter. Using'while' in parallel. In this order, the character after'space' is not displayed.
+			write(1, &av[1][n], 1);
+			n--; //I used'swap' at first, but I don't have to. Not changing at the same time.
+		}	
+	}
 	write(1, "\n", 1);
-	return (0);
 }
+			
+
+

@@ -54,7 +54,7 @@ void	ft_union(char *s1, char *s2)
 
 	i = 0 ;
 	while (s1[i])
-		if (not_seen_before(s1, i, s1[i]))
+		if (not_seen_before(s1, i, s1[i])) // 즉, 리턴이 1인 경우..
 			write(1, &s1[i], 1);
 			i++;
 	j = 0;

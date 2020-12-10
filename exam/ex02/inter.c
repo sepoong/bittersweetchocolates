@@ -30,13 +30,13 @@ void inter(char *str1, char *str2)
 
 	j = 0;
 	while (j < 256)
-		check[j++] = 0; // 모든 배열을 0으로 초기화, j로 돌림
+		check[j++] = 0; // 모든 배열을 0으로 초기화, j로 돌림 //굳이 i, j 순서 상관없음
 	i = 0;
 
 	while (str1[i] != 0)
 	{
 		j = 0;
-		while (str2[j] != 0)   // i, 다음 j로 !!
+		while (str2[j] != 0)   // i
 		{
 			if (str1[i] == str2[j] && check[(int)str1[i]] == 0)  // i로 돌린다
 			{   

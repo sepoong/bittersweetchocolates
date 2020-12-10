@@ -43,7 +43,8 @@ int	ft_isspace(char c)
 int		tolower(char c)
 {
 	return (c += (c >= 'A' && c <= 'Z') ? 32 : 0);
-}
+}   //  (str[i] >= 'A' && 'Z' >= str[i])
+   //	str[i] += 32;
 
 int		toupper(char c)
 {

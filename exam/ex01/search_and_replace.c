@@ -49,7 +49,7 @@ int main(int argc, char **argv)
 
 	i = 0;
 	if (argv[2][1] != '\0' || argv[3][1] != '\0')
-	{
+	{      // 인자 안에 두개 이상 문자열이 있을 경우 아웃! [2][0]이 아니다
 		write(1, "\n", 1);
 	}
 	return (0);

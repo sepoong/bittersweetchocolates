@@ -36,7 +36,7 @@ char	*ft_strdup(char *src)
 			return (0);
 	j = 0;
 //	dest[i] = '\0';
-	while (*src)
+	while (*src) // 여기도 str
 	{
 		dest[j] = src[j];
 		j++;

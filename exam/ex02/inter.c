@@ -38,7 +38,7 @@ void inter(char *str1, char *str2)
 		j = 0;
 		while (str2[j] != 0)   // i
 		{
-			if (str1[i] == str2[j] && check[(int)str1[i]] == 0)  // i로 돌린다
+			if (str1[i] == str2[j] && check[(int)str1[i]] == 0)  // i로 돌린다, 여기서만 일치시켜주면 
 			{   
 				check[(int)str1[i]] = 1; // 일로 세팅되기 때문에 다시 같은 수가반복
 				write(1, &str1[i], 1);  //되면 조건 값에 의해 패스, str1에다 하는거

@@ -34,10 +34,10 @@ $>
 	
 #include <unistd.h>
 
-intft_space(char c)
-{
+int ft_space(char c)
+{  // 문자열 출력이 아니다 char *str XXX
 if (c == ' ' || c == '\t')
-return (1);
+	return (1);
 return (0);
 }
 
@@ -47,19 +47,19 @@ int i;
 
 i = 0;
 if (ac == 2)
-{
+{   // 전체 while 문 없다.  while 4개, 
 while (av[1][i])
-i++;
+	i++;
 i--;
 while (ft_space(av[1][i]))
-i--;
+	i--;
 while (av[1][i] && !ft_space(av[1][i]))
-i--;
+	i--;
 i++;
 while (av[1][i] && !ft_space(av[1][i]))
 {
-write(1, &av[1][i], 1);
-i++;
+	write(1, &av[1][i], 1);
+	i++;
 }
 }
 write(1, "\n", 1);

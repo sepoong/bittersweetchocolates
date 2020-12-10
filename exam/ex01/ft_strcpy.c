@@ -22,7 +22,7 @@ char	*ft_strcpy(char *s1, char *s2)
 	{
 		s1[i] = s2[i];
 		i++;
-	}
+	}   //s2를 널 검사, s1 리턴
 	s1[i] = '\0';
 	return (s1);
 }
